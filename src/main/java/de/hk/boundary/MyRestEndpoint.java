@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.lv1871.hk.boundary;
+package de.hk.boundary;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -22,7 +22,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import de.lv1871.hk.business.SomeJob;
+import de.hk.business.SomeJob;
 
 /**
  * @author herbert.koeglsperger
@@ -42,7 +42,7 @@ public class MyRestEndpoint {
 	// curl -X GET "http://localhost:8080/exceptionhandling/rest/123o" -H "accept: application/json"
 	
 	@Inject
-	SomeJob somejob;
+    SomeJob somejob;
 
     @GET
     @Path("{somestring}")

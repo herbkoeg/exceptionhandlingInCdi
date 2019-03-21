@@ -1,5 +1,5 @@
 
-package de.lv1871.hk.boundary;
+package de.hk.boundary;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
