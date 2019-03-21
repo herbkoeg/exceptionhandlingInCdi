@@ -1,4 +1,4 @@
-helloworld-rs: Helloworld Using JAX-RS (Java API for RESTful Web Services)
+Exceptionhandling In CDI
 ==========================================================================
 Author: Herbert Koeglsperger  
 Level: Intermediate  
