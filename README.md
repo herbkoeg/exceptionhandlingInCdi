@@ -8,12 +8,14 @@ Target Product: WildFly
 
 What is it?
 -----------
-Just a basic demonstration of exception-Handling in CDI environment
+Just a basic demonstration of exception-Handling in CDI environment.
+
+curl -X GET "http://localhost:8080/exceptionhandling/rest/123456" -H "accept: application/json" demonstrates that an RuntimeException thrown by method of a cdi injected bean (see SomeWorker.java) could not be catched in the invoker of this method (see SomeJob.java).
 
 System requirements
 -------------------
 
-I tried it out with Wildfly 10 ;-)
+I tried it out with Wildfly 10 but it should also work with other versions.
 
 
 Start the WildFly Server
@@ -27,7 +29,7 @@ Start the WildFly Server
 
  
 Build and Deploy the Quickstart
--------------------------
+--------------------------------
 
 mvn clean install wildfly:deploy
 
@@ -36,13 +38,13 @@ mvn clean install wildfly:deploy
 Run the Quickstart
 -------------------------------------
 
- -> MyApplicationException will be catched in SomeWorker.java
+ -> MyApplicationException thrown in SomeWorker will be catched in SomeJob
  curl -X GET "http://localhost:8080/exceptionhandling/rest/1" -H "accept: application/json"
 
- -> MyRuntimeException will be not catched in SomeWorker.java
+ -> MyRuntimeException thrown in SomeWorker  will be not catched in SomeJob
 curl -X GET "http://localhost:8080/exceptionhandling/rest/123456" -H "accept: application/json"
 
- -> MyException will be catched in in SomeWorker.java
+ -> MyException thrown in SomeWorker will be catched in in SomeJob
 curl -X GET "http://localhost:8080/exceptionhandling/rest/123o" -H "accept: application/json"
 
 
